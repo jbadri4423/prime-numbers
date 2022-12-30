@@ -1,25 +1,35 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.4.33103.184
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp8", "ConsoleApp8\ConsoleApp8.csproj", "{0E14F6CE-70AD-4DF5-B83F-CA94F1EA0184}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0E14F6CE-70AD-4DF5-B83F-CA94F1EA0184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E14F6CE-70AD-4DF5-B83F-CA94F1EA0184}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E14F6CE-70AD-4DF5-B83F-CA94F1EA0184}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E14F6CE-70AD-4DF5-B83F-CA94F1EA0184}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {90DAAC6D-C703-41AC-91BC-E3CD183A9406}
-	EndGlobalSection
-EndGlobal
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int smallerNumber, biggerNumber;
+            Console.Write("Enter the smaller Number : ");
+            smallerNumber = int.Parse(Console.ReadLine());
+            Console.Write("Enter the bigger Number : ");
+            biggerNumber = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Below are the perfect number between " + smallerNumber + " and " + biggerNumber);
+
+            for (int i = smallerNumber; i <= biggerNumber; i++)
+            {
+                decimal sum = 0;
+                for (int j = 1; j < i; j++)
+                {
+                    if (i % j == 0)
+                        sum = sum + j;
+                }
+                if (sum == i)
+                    Console.WriteLine("\t" + i);
+            }
+
+        }
+    }
+}
